@@ -4,6 +4,17 @@ class PicturesController < ApplicationController
   end
 
   def create_row
+# params lookk like : {"the_source" => "1" "the_caption" => "2"}
+#create a new row for the photos table
+#fill in its column values by pulling the information the user typed into the form out of the params hash
+#save it
+
+p = Photo.new
+p.caption = params["the_caption"]
+p.source = params ["the_source]"]
+p.save
+
+
     render("pic_templates/create_row.html.erb")
   end
 
