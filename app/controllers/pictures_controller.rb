@@ -8,10 +8,12 @@ class PicturesController < ApplicationController
   end
 
   def index
+    @list_of_photos = Photo.all
     render("pic_templates/index.html.erb")
   end
 
   def show
+    @my_photo = Photo.find(params["the_id"])
     render("pic_templates/show.html.erb")
   end
 
